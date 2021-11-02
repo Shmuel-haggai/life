@@ -37,7 +37,7 @@
                                     </span>
                                 </div>
                                 <input type="email" class="form-control {{ $errors->has('email')?'is-invalid':'' }}" name="email" value="{{ old('email') }}"
-                                       placeholder="@lang('auth.email')">
+                                       placeholder="Email">
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -51,7 +51,7 @@
                                     </span>
                                 </div>
                                 <input type="password" class="form-control {{ $errors->has('password')?'is-invalid':'' }}" name="password"
-                                        placeholder="@lang('auth.password')">
+                                        placeholder="Mot de passe">
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
                                        <strong>{{ $errors->first('password') }}</strong>
