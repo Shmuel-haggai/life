@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('photos', App\Http\Controllers\Admin\PhotoController::class, ["as" => 'admin']);
 });
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('accueil');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
