@@ -18,7 +18,7 @@ class CreateLiensTable extends Migration
             $table->id('id');
             $table->string('url');
             $table->string('nom');
-            $table->integer('liste_id')->unsigned();
+            $table->unsignedBigInteger('liste_id');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('liste_id')->references('id')->on('listes');

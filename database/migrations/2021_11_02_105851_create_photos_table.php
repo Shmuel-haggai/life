@@ -17,10 +17,10 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id('id');
             $table->string('url');
-            $table->integer('liste_id')->unsigned();
-            $table->timestamps();
+            $table->unsignedBigInteger('liste_id');
             $table->softDeletes();
             $table->foreign('liste_id')->references('id')->on('listes');
+            $table->timestamps();
         });
     }
 
