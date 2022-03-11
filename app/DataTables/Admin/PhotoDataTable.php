@@ -65,7 +65,8 @@ class PhotoDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            
+            'url',
+            'liste_id'
         ];
     }
 

@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\Admin\CreateLienRequest;
-use App\Http\Requests\Admin\UpdateLienRequest;
-use App\Repositories\Admin\LienRepository;
-use App\Http\Controllers\AppBaseController;
+use Flash;
+use Response;
 use App\Models\Admin\Lien;
 use App\Models\Admin\Liste;
 use Illuminate\Http\Request;
-use Flash;
-use Response;
+use App\DataTables\Admin\LienDataTable;
+use App\Repositories\Admin\LienRepository;
+use App\Http\Controllers\AppBaseController;
+use App\Http\Requests\Admin\CreateLienRequest;
+use App\Http\Requests\Admin\UpdateLienRequest;
 
 class LienController extends AppBaseController
 {
@@ -29,12 +30,14 @@ class LienController extends AppBaseController
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index(LienDataTable $LienDataTable)
     {
         $liens = $this->lienRepository->all();
 
-        return view('liens.index')
-            ->with('liens', $liens);
+        /*return view('liens.index')
+            ->with('liens', $liens);*/
+        
+        return $LienDataTable->render('liens.index');
     }
 
     /**

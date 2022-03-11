@@ -78,7 +78,7 @@
             <a class="nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="true" aria-expanded="false">
                <i class="fa fa-2x fa-user"></i>
-                {{ Auth::user()->name }}
+                {{ Auth::user()->name }} / {{ Auth::user()->role }}
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="{{ url('/logout') }}" class="btn btn-default btn-flat"

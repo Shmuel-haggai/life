@@ -13,9 +13,9 @@
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
                              Photos
-                             @if (Auth::user()->email == 'challengesh.info@gmail.com')
+
                              <a class="pull-right" href="{{ route('admin.photos.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
-                          @endif
+
                          </div>
                          <div class="card-body">
                              @include('photos.table')

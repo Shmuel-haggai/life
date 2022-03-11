@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\Admin\CreatePhotoRequest;
-use App\Http\Requests\Admin\UpdatePhotoRequest;
-use App\Repositories\Admin\PhotoRepository;
-use App\Http\Controllers\AppBaseController;
-use App\Models\Admin\Liste;
-use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\Admin\Liste;
+use Illuminate\Http\Request;
+use App\DataTables\Admin\PhotoDataTable;
+use App\Http\Controllers\AppBaseController;
+use App\Repositories\Admin\PhotoRepository;
+use App\Http\Requests\Admin\CreatePhotoRequest;
+use App\Http\Requests\Admin\UpdatePhotoRequest;
 
 class PhotoController extends AppBaseController
 {
@@ -28,12 +29,14 @@ class PhotoController extends AppBaseController
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index(PhotoDataTable $PhotoDataTable)
     {
         $photos = $this->photoRepository->all();
 
         return view('photos.index')
             ->with('photos', $photos);
+        
+        //return $PhotoDataTable->render('photos.index');
     }
 
     /**

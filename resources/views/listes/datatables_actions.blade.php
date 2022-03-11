@@ -3,7 +3,7 @@
     <a href="{{ route('admin.listes.show', $id) }}" class='btn btn-ghost-success'>
        <i class="fa fa-eye"></i>
     </a>
-    @if (Auth::user()->email == 'challengesh.info@gmail.com')
+    @if (Auth::user()->isAdmin())
 
     <a href="{{ route('admin.listes.edit', $id) }}" class='btn btn-ghost-info'>
         <i class="fa fa-edit"></i>

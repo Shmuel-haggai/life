@@ -38,9 +38,9 @@
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
                              Listes
-                            @if (Auth::user()->email == 'challengesh.info@gmail.com')
+
                              <a class="pull-right" href="{{ route('admin.listes.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
-                            @endif
+
                          </div>
                          <div class="card-body">
                              @include('listes.table')
