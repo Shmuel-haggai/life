@@ -33,10 +33,10 @@ class PhotoController extends AppBaseController
     {
         $photos = $this->photoRepository->all();
 
-        return view('photos.index')
-            ->with('photos', $photos);
+        /*return view('photos.index')
+            ->with('photos', $photos);*/
         
-        //return $PhotoDataTable->render('photos.index');
+        return $PhotoDataTable->render('photos.index');
     }
 
     /**

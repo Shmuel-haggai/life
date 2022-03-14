@@ -52,6 +52,7 @@ class PhotoRepository extends BaseRepository
 
         $input = $request->all();
         $input['url'] = $path;
+        dd($input);
 
         return $this->create($input);
     }
