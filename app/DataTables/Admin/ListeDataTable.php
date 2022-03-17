@@ -2,12 +2,17 @@
 
 namespace App\DataTables\Admin;
 
+use datatables;
 use App\Models\Admin\Liste;
-use Yajra\DataTables\Services\DataTable;
+use App\Models\emplacement;
+use function PHPSTORM_META\type;
+
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class ListeDataTable extends DataTable
-{
+{ 
     /**
      * Build DataTable class.
      *
@@ -29,7 +34,12 @@ class ListeDataTable extends DataTable
      */
     public function query(Liste $model)
     {
-        return $model->newQuery();
+        $emplacement_id = $this->id;
+        if($emplacement_id == "-1" || $emplacement_id == ""){
+            return $model->newQuery();
+        }else{
+            return $model->Where('emplacement_id', $emplacement_id)->newQuery();
+        }
     }
 
     /**
@@ -75,9 +85,6 @@ class ListeDataTable extends DataTable
             // 'emplacement'
         ];
     }
-
-
-
 
     /**
      * Get filename for export.

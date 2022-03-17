@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\emplacement;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -33,7 +34,8 @@ class Liste extends Model
         'nom',
         'frequence',
         'indication',
-        'emplacement'
+        'emplacement',
+        'emplacement_id'
     ];
 
     /**
@@ -60,6 +62,10 @@ class Liste extends Model
 
     public function photos(){
         return $this->hasMany(Photo::class);
+    }
+
+    public function emplacement(){
+        return $this->belongsTo(emplacement::class);
     }
 
 

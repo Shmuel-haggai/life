@@ -4,9 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateListesTable extends Migration
+class CreateEmplacementsTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,14 +13,10 @@ class CreateListesTable extends Migration
      */
     public function up()
     {
-        Schema::create('listes', function (Blueprint $table) {
-            $table->id('id');
-            $table->longtext('nom');
-            $table->longtext('frequence');
-            $table->longtext('indication');
-            $table->longtext('emplacement');
+        Schema::create('emplacements', function (Blueprint $table) {
+            $table->id();
+            $table->string('nom_emplacement');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -32,6 +27,6 @@ class CreateListesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('listes');
+        Schema::dropIfExists('emplacements');
     }
 }

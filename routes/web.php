@@ -1,8 +1,10 @@
 <?php
 
-use GuzzleHttp\Middleware;
+
+use App\Models\emplacement;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\DataTables\Admin\ListeDataTable;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//filtre select
+Route::get('/admin/listes/{id}', function(ListeDataTable $dataTable, $id){
+    $dataemplacement = emplacement::all();
+    return $dataTable->with('id', $id)
+            ->render('listes.index', ['dataemplacement' => $dataemplacement]);
+ })->name('listes.custom');
 
 Auth::routes();
 

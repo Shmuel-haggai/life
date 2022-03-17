@@ -38,11 +38,19 @@
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
                              Listes
-
                              <a class="pull-right" href="{{ route('admin.listes.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
-
                          </div>
                          <div class="card-body">
+                             <div id="select">
+                                <form action="" method="GET" class="form-group">
+                                    <select name="emplacement" id="emplacement" class="form-control">
+                                        <option value="-1">--selection un emplacement--</option>
+                                        @foreach ($dataemplacement as $itememplacement)
+                                            <option value="{{$itememplacement['id']}}">{{$itememplacement['nom_emplacement']}}</option>
+                                        @endforeach
+                                    </select>
+                                </form>
+                             </div>
                              @include('listes.table')
                               <div class="pull-right mr-3">
 
@@ -72,3 +80,6 @@
     </div>
 @endsection
 
+
+
+  

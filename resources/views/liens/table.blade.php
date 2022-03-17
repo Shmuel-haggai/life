@@ -1,5 +1,3 @@
-
-
 @section('css')
     @include('layouts.datatables_css')
 @endsection

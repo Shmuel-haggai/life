@@ -20,7 +20,8 @@ class ListeRepository extends BaseRepository
         'nom',
         'frequence',
         'indication',
-        'emplacement'
+        'emplacement',
+        'emplacement_id'
     ];
 
     /**

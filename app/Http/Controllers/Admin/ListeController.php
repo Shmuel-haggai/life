@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\DataTables\Admin\ListeDataTable;
+use Flash;
+use Response;
+use App\Models\emplacement;
 use App\Http\Requests\Admin;
+use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\DB;
+use App\DataTables\Admin\ListeDataTable;
+use App\Http\Controllers\AppBaseController;
+use App\Repositories\Admin\ListeRepository;
 use App\Http\Requests\Admin\CreateListeRequest;
 use App\Http\Requests\Admin\UpdateListeRequest;
-use App\Repositories\Admin\ListeRepository;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class ListeController extends AppBaseController
 {
@@ -27,9 +30,11 @@ class ListeController extends AppBaseController
      * @param ListeDataTable $listeDataTable
      * @return Response
      */
+
     public function index(ListeDataTable $listeDataTable)
     {
-        return $listeDataTable->render('listes.index');
+        $dataemplacement = emplacement::all();
+        return $listeDataTable->render('listes.index', ['dataemplacement' => $dataemplacement]);
     }
 
     /**
@@ -52,6 +57,13 @@ class ListeController extends AppBaseController
     public function store(CreateListeRequest $request)
     {
         $input = $request->all();
+                
+        $emplacement = emplacement::create([
+            'nom_emplacement' => $input['emplacement'],
+        ]);
+
+        $singleemplacement = $emplacement->toArray();
+        $input['emplacement_id'] = $singleemplacement['id'];
 
         $liste = $this->listeRepository->create($input);
 

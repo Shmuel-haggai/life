@@ -7,4 +7,11 @@
 @push('scripts')
     @include('layouts.datatables_js')
     {!! $dataTable->scripts() !!}
+
+    <script>
+        $('#emplacement').on('change', function(e){
+            $(this).closest('form').submit();
+            document.location.href = "/admin/listes/"+this.value;
+        });
+    </script>
 @endpush
