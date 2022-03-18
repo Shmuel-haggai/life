@@ -18,7 +18,7 @@ use App\DataTables\Admin\ListeDataTable;
 */
 
 //filtre select
-Route::get('/admin/listes/{id}', function(ListeDataTable $dataTable, $id){
+Route::get('/admin/listes/emplacement/{id}', function(ListeDataTable $dataTable, $id){
     $dataemplacement = emplacement::all();
     return $dataTable->with('id', $id)
             ->render('listes.index', ['dataemplacement' => $dataemplacement]);

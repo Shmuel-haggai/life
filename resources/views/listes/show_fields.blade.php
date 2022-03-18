@@ -1,45 +1,43 @@
 
-<div class="col-md-12">
+<div class="col-md-12 show-list">
 
     <!-- Nom Field -->
-    <div class="form-group">
-
-        <p>
-            <h5>Details</h5>
-            {{ $liste->nom }}
-        </p>
+    <div class="form-group nom">
+            <h5 class="title-show-liste">Nom</h5>
+            <p>{{ $liste->nom }} </p>
     </div>
 
     <!-- Frequence Field -->
-    <div class="form-group">
-        <h5>Frequence</h5>
+    <div class="form-group frequence">
+        <h5 class="title-show-liste">Frequence</h5>
         <p>{{ $liste->frequence }}</p>
     </div>
 
     <!-- Indication Field -->
-    <div class="form-group">
-        <h5>Indication</h5>
+    <div class="form-group indication">
+        <h5 class="title-show-liste">Indication</h5>
         <p>{{ $liste->indication }}</p>
     </div>
 
     <!-- Emplacement Field -->
-    <div class="form-group">
-        <h5>Emplacement</h5>
+    <div class="form-group emplacement">
+        <h5 class="title-show-liste">Emplacement</h5>
         <p>{{ $liste->emplacement }}</p>
     </div>
 
 </div>
 
 
-<div class="col-md-12 mt-3">
+<div class="col-md-12 mt-3 liens">
+    <h5 class="title-show-liste">Liens</h5>
     @foreach ($liste->liens as $lien)
         <a href="{{ $lien->url }}" target="_blank" class="btn btn-success mt-2">{{ $lien->nom }}</a>
     @endforeach
 </div>
 
 
-<div class="col-md-12 mt-3">
-
+<div class="col-md-12 mt-3 photos">
+    <h5 class="title-show-liste">Photos</h5>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

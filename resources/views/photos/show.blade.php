@@ -15,10 +15,15 @@
                          <div class="card">
                              <div class="card-header">
                                  <strong>Details</strong>
-                                  <a href="{{ route('admin.photos.index') }}" class="btn btn-light">Back</a>
+                                  <a href="{{ route('admin.photos.index') }}" class="btn btn-light back">Back</a>
                              </div>
-                             <div class="card-body">
-                                 @include('photos.show_fields')
+                             <div class="card-body show-photos">
+                                <div class="photo-item">
+                                    <p><img src="/{{ $photo->url }}" height="400" alt=""></p>
+                                </div>
+                                <div class="photo-detail">
+                                    @include('photos.show_fields')
+                                </div> 
                              </div>
                          </div>
                      </div>

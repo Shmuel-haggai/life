@@ -11,7 +11,7 @@
     <script>
         $('#emplacement').on('change', function(e){
             $(this).closest('form').submit();
-            document.location.href = "/admin/listes/"+this.value;
+            document.location.href = "/admin/listes/emplacement/"+this.value;
         });
     </script>
 @endpush

@@ -82,6 +82,8 @@ class ListeController extends AppBaseController
     public function show(ListeDataTable $listeDataTable, $id)
     {
 
+        $dataemplacement = emplacement::all();
+
         $liste = $this->listeRepository->find($id);
 
         if (empty($liste)) {
@@ -90,7 +92,7 @@ class ListeController extends AppBaseController
             return redirect(route('admin.listes.index'));
         }
 
-        return $listeDataTable->render('listes.index', compact('liste'));
+        return $listeDataTable->render('listes.index', compact('liste'), ['dataemplacement' => $dataemplacement]);
 
         //return view('listes.show')->with('liste', $liste);
     }
@@ -111,7 +113,6 @@ class ListeController extends AppBaseController
 
             return redirect(route('admin.listes.index'));
         }
-
         return view('listes.edit')->with('liste', $liste);
     }
 

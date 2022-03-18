@@ -15,7 +15,7 @@
             color: #fff;
             background-color: var(--primary);
             margin-left: 0.3rem;
-            padding: 5px;
+            padding: 10px;
             border-radius: 5px;
             font-size: 10px;
 
@@ -45,7 +45,7 @@
                                 <form action="" method="GET" class="form-group">
                                     <select name="emplacement" id="emplacement" class="form-control">
                                         <option value="-1">--selection un emplacement--</option>
-                                        @foreach ($dataemplacement as $itememplacement)
+                                        @foreach ($dataemplacement ?? '' as $itememplacement)
                                             <option value="{{$itememplacement['id']}}">{{$itememplacement['nom_emplacement']}}</option>
                                         @endforeach
                                     </select>
@@ -79,7 +79,3 @@
          </div>
     </div>
 @endsection
-
-
-
-  

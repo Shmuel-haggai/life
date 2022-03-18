@@ -15,9 +15,9 @@
                          <div class="card">
                              <div class="card-header">
                                  <strong>Details</strong>
-                                  <a href="{{ route('admin.liens.index') }}" class="btn btn-light">Back</a>
+                                  <a href="{{ route('admin.liens.index') }}" class="btn btn-light back">Back</a>
                              </div>
-                             <div class="card-body">
+                             <div class="card-body show-liens">
                                  @include('liens.show_fields')
                              </div>
                          </div>

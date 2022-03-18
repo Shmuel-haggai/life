@@ -15,7 +15,7 @@
         color: #fff;
         background-color: var(--primary);
         margin-left: 0.3rem;
-        padding: 5px;
+        padding: 10px;
         border-radius: 5px;
         font-size: 10px;
 
