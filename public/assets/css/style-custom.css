@@ -89,3 +89,19 @@
     font-size: 16px;
     font-weight: 600;
 }
+.liens a{
+    padding: 5px 15px !important;
+}
+#dataTableBuilder_info{   
+    color: #b8c0c7;
+}
+ul.dt-button-collection.dropdown-menu{
+    padding: 0px 15px;
+}
+ul.dt-button-collection.dropdown-menu li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+ul.dt-button-collection.dropdown-menu li.dt-button.buttons-csv, ul.dt-button-collection.dropdown-menu li.dt-button.buttons-excel{
+    border-bottom: 1px solid #f1f1f1;
+}
